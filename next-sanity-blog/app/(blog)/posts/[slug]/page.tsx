@@ -4,6 +4,7 @@ import { type PortableTextBlock } from "next-sanity";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import Slink from "@/app/(blog)/slink";
 
 import Avatar from "../../avatar";
 import CoverImage from "../../cover-image";
@@ -15,6 +16,7 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { postQuery, settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import CommentSection from "../../comentSec/comentSec";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -65,7 +67,7 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <div className="container mx-auto px-5">
+    <div className="container mx-auto p-28 px-5">
       <h2 className="mb-16 mt-10 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
         <Link href="/" className="hover:underline">
           {settings?.title || demo.title}
@@ -105,11 +107,13 @@ export default async function PostPage({ params }: Props) {
       <aside>
         <hr className="border-accent-2 mb-24 mt-28" />
         <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
-          Recent Stories
+          Recent <span className="text-blue-600">Stories</span>
         </h2>
         <Suspense>
           <MoreStories skip={post._id} limit={2} />
         </Suspense>
+        <CommentSection/>
+        <Slink/>
       </aside>
     </div>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 import Avatar from "./avatar";
 import CoverImage from "./cover-image";
@@ -12,6 +13,8 @@ import type { HeroQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
+import CommentSection from "./comentSec/comentSec";
+import Slink from "./slink";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -99,12 +102,16 @@ export default async function Page() {
       {heroPost?._id && (
         <aside>
           <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
-            More Stories
+            More<span className="text-blue-600">Stories</span>
           </h2>
           <Suspense>
             <MoreStories skip={heroPost._id} limit={100} />
           </Suspense>
+          <CommentSection/>
+          <Slink/>
+          
         </aside>
+        
       )}
     </div>
   );

@@ -2,6 +2,7 @@ import "../globals.css";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
+
 import {
   VisualEditing,
   toPlainText,
@@ -18,6 +19,8 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Link from "next/link";
+
+
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch({
@@ -79,6 +82,10 @@ export default async function RootLayout({
                   value={footer as PortableTextBlock[]}
                 />
               ) : (
+
+<>
+
+                
                 <div className="flex flex-col items-center py-28 lg:flex-row">
                   <h3 className="mb-10 text-center text-4xl font-bold leading-tight tracking-tighter lg:mb-0 lg:w-1/2 lg:pr-4 lg:text-left lg:text-5xl">
                     Thanks for visit it.
@@ -90,15 +97,25 @@ export default async function RootLayout({
                     >
                       Back to Home
                     </Link>
-                 
+
                   </div>
                 </div>
+
+
+                <div className="text-center text-sm text-gray-500">
+                  All rights reserved | Farooque Malik &copy; {new Date().getFullYear()}.
+                </div>
+                </> 
               )}
             </div>
           </footer>
         </section>
+        
         {isDraftMode && <VisualEditing />}
         <SpeedInsights />
+        
+
+        
       </body>
     </html>
   );
