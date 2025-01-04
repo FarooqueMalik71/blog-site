@@ -5,7 +5,7 @@ import Slink from "../slink";
 export default function ContactUs() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault(); // Prevent actual form submission
     setIsSubmitted(true);
 
