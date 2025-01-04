@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { useState } from "react";
 
 import Slink from "../slink";
@@ -103,5 +103,5 @@ export default function ContactUs() {
       <Slink/>
      
     </div>
-  );
+  )
 }

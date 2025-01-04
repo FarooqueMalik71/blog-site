@@ -48,7 +48,7 @@ export default function page() {
           </p>
         </div>
       </div>
-     <Slink/>
+      <Slink/>
     </div>
-  );
+  )
 }
