@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react";
-
 import Slink from "../slink";
 
 export default function ContactUs() {
@@ -20,9 +19,10 @@ export default function ContactUs() {
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">Get in<span className="text-blue-600"> Touch</span></h1>
         <p className="text-lg text-gray-600">
-          We'd love to hear from you! Fill out the form below and we’ll get back
-          to you as soon as possible.
-        </p>
+  We&apos;d love to hear from you! Fill out the form below and we&apos;ll get back
+  to you as soon as possible.
+</p>
+
       </div>
 
       {/* Contact Form */}
@@ -100,7 +100,7 @@ export default function ContactUs() {
           </div>
         )}
       </div>
-      <Slink/>
+      <Slink />
      
     </div>
   )

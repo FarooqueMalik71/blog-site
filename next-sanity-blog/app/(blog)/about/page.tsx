@@ -1,7 +1,7 @@
 import Image from "next/image";
-
 import Slink from "@/app/(blog)/slink";
-export default function page() {
+
+export default function Page() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center px-4 py-28">
       {/* Hero Section */}
@@ -21,7 +21,7 @@ export default function page() {
         {/* Profile Picture */}
         <div className="mb-6 lg:mb-0 lg:mr-8">
           <Image
-            src="/images/pic.png" // Replace with your image path
+            src="/images/pic.png"
             alt="Muhammad Farooque"
             width={600}
             height={600}
@@ -35,20 +35,20 @@ export default function page() {
             Meet the Author: Muhammad Farooque
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-4">
-            Hello, I'm Muhammad Farooque, the creator of Digital Diaries. With
-            a passion for Information Technology and a love for exploring
+            Hello, I&apos;m Muhammad Farooque, the creator of Digital Diaries. 
+            With a passion for Information Technology and a love for exploring
             innovative solutions, I created this platform to share my knowledge
             and connect with like-minded individuals.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
             Through Digital Diaries, I aim to deliver valuable content, covering
             everything from emerging technologies to tips for IT enthusiasts.
-            Whether you're a tech professional or a curious learner, you'll find
+            Whether you&apos;re a tech professional or a curious learner, you&apos;ll find
             something here to spark your interest.
           </p>
         </div>
       </div>
-      <Slink/>
+      <Slink />
     </div>
-  )
+  );
 }
